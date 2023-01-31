@@ -16,7 +16,7 @@
 
 namespace kebbet\redirect_primary_multisite;
 
-! defined( 'ABSPATH' ) and exit;
+! defined( 'ABSPATH' ) && exit;
 
 /**
  * The redirect.
@@ -25,13 +25,13 @@ namespace kebbet\redirect_primary_multisite;
  *
  * @return void
  */
-function redirect_action(){
+function redirect_action() {
 	if ( is_main_site() ) {
 		// The URL to redirect to.
-		$url = 'https://stamfest.no/2022/';
+		$url = 'https://stamfest.no/2023/';
 
 		// Exit, otherwise wp_redirect won't work properly.
 		exit( wp_redirect( $url, 301 ) );
 	}
 }
-add_action( 'parse_request', __NAMESPACE__ . '\redirect_action');
+// add_action( 'parse_request', __NAMESPACE__ . '\redirect_action');
